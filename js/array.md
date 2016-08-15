@@ -66,4 +66,28 @@ array.splice(index, howmany, [ele1,...]); // return 删除的元素
 array.slice(start, end); // end 可为负数
 ```
 
-## 实践
+## ES5
+### filter
+> 使用指定的函数测试数组的所有元素
+返回：一个包含通过测试的元素的新数组
+
+```js
+arr.filter(callback[, thisArg]);
+```
+callback: 测试函数
+- element
+- index
+- array
+- `return:`
+    + true: 保留
+    + false: 不保留
+```js
+function isBigEnough(ele) {
+    if (+ele > 10) {
+        return true;
+    }
+}
+
+var bigArr = [1, 100, 21, 22].filter(isBigEnough);
+```
+[TODO](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
